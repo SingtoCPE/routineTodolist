@@ -8,7 +8,7 @@ var myDate = document.getElementById("mydate");
 
 
 //New task list item
-var createNewTaskElement=function(taskString){
+var createNewTaskElement = function(taskString ){
 
 	var listItem=document.createElement("li");
 
@@ -29,6 +29,7 @@ var createNewTaskElement=function(taskString){
 	//Each elements, needs appending
 	checkBox.type="checkbox";
 	editInput.type="text";
+	
 
 	editButton.innerText="Edit";//innerText encodes special characters, HTML does not.
 	editButton.className="edit";
@@ -51,14 +52,14 @@ var createNewTaskElement=function(taskString){
 var addTask=function(){
 	console.log("Add Task...");
 	//Create a new list item with the text from the #new-task:
-	var listItem=createNewTaskElement(taskInput.value);
-	var listItemDate=createNewTaskElement(myDate.value);
+	var listItem=createNewTaskElement(taskInput.value + " " + "[" + "Date" + ": " + myDate.value + "]");
+	
 	
 	//Append listItem to incompleteTaskHolder
 	incompleteTaskHolder.appendChild(listItem);
-	incompleteTaskHolder.appendChild(listItemDate);
+	
 	bindTaskEvents(listItem, taskCompleted);
-	bindTaskEvents(listItemDate, taskCompleted);
+	
 
 	
 
@@ -93,6 +94,7 @@ var containsClass=listItem.classList.contains("editMode");
 
 		//toggle .editmode on the parent.
 		listItem.classList.toggle("editMode");
+		
 }
 
 
