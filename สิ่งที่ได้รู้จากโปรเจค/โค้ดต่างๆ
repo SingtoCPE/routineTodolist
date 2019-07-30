@@ -1,0 +1,15 @@
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+  }
+}
+//-------------------------------------------------------
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.parentElement.removeChild(div);
+    }
+}
+//-------------------------------------------------------
+โค้ดนี้ลบ element ที่เราแอดเข้ามาจากปุ่ม add ได้เสยวะ 
