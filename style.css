@@ -41,7 +41,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  color: #333;
+  color: rgb(11, 192, 153);
 }
 /* Heading */
 h3,
